@@ -4,8 +4,7 @@ import { PageContainer } from '../components/PageContainer/PageContainer'
 import { Link } from 'react-router-dom';
 export default function SongList() {
     const SongList = AllSongsApi();
-    console.log(SongList);
-    console.log("test")
+
   return (
     <PageContainer title="Songs" rowClassName="text-left">
     <ul>

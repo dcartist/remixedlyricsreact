@@ -19,12 +19,10 @@ const AllCategoryApi = () => {
 //List all songs
 const AllSongsApi = () => {
     const [songs, setSongs] = useState([]);
-    console.log(songs)
     useEffect(() => {
         const fetchSongs = async () => {
             const songsresponse = await axios.get(`${process.env.REACT_APP_API_URL}/songs/`);
             setSongs(songsresponse.data);
-            console.log(songsresponse.data);
         }
         fetchSongs();
     }, []);

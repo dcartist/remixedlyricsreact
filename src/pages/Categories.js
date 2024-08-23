@@ -4,8 +4,7 @@ import { PageContainer } from '../components/PageContainer/PageContainer'
 import { Link } from 'react-router-dom';
 export default function Categories() {
     const CategoryList = AllCategoryApi();
-    console.log(CategoryList);
-    console.log("test")
+
   return (
     <PageContainer title="Categories" rowClassName="text-left">
         <p>Coming soon... active listing by categories</p>

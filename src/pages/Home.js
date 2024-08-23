@@ -8,7 +8,6 @@ import IntroHeader from "../components/Headers/IntroHeader";
 export default function Home() {
 
     const categories = AllCategoryApi();
-    console.log(categories);
 
   return (
     <PageContainer title="Remixed Lyrics" rowClassName="text-left" noHeaders>
