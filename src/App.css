@@ -1,5 +1,5 @@
 .XLarge-text {
-  font-size: 30vh;
+  font-size: 10rem;
   margin-bottom: 0;
   padding-bottom: 0 ;
   display: inline-block;
@@ -7,13 +7,72 @@
 .Large-text {
   margin-top: 0 ;
   padding-top: 0 ;
-  font-size: 25vh;
+  font-size: 10rem;
 }
 
 .flip-horizontal-bottom {
 	-webkit-animation: flip-horizontal-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
 	        animation: flip-horizontal-bottom 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
 }
+
+
+
+/* CSS */
+.button-53 {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53 {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+
+
 
 
 /* ----------------------------------------------
@@ -48,6 +107,7 @@
             transform: rotateX(-180deg);
   }
 }
+
 
 
 
