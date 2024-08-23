@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
  export default function NavBar() {
      const menu = [
         {name: "Home", link: "/"},
+        {name: "About", link: "/about"},
         {name: "Artists", link: "/artists"},
         {name: "Songs", link: "/songs"}, 
-        {name: "Categories", link: "/categories"},
-        {name: "About", link: "/about"},
+        // {name: "Categories", link: "/categories"},  Coming Soon
      ]
 
 

@@ -31,24 +31,27 @@ const PageContainer = ({ children, rowClassName = "", containerClassName = "", t
 // Container for songs
 const SongContainer = ({ rowClassName = "", containerClassName = "", title="", info}) => {
     useEffect(() => {
-       info ?  document.title = `${info.title} - ${info.artist.name}` : document.title = ` No Artist Found` ;
+    //    info ?  document.title = `${info.title} - ${info.artist.name}` : document.title = ` No Artist Found` ;
       }, [])
 
     return (
       <Container className={containerClassName}>
         {
+            info && (
+
             info ?  <Row>
-                <Col>
-                <h1>{info.title}</h1>
-            <p>{info.artist.name}</p>
-                </Col>
-                <Col className="d-flex align-items-center">
-                
-            <p className="ms-auto">Remixed Level: <Rating ratingNumber={info.remix_level.level} /></p>
-                </Col>
+            <Col>
+            <h1>{info.title}</h1>
+            {info.artist && <p>{info.artist.name}</p>}
+            </Col>
+            <Col className="d-flex align-items-center">
             
-             </Row> : <Row>
-            <h1>No Artist Found</h1> </Row>
+        { info.remix_level && <p className="ms-auto">Remixed Level: <Rating ratingNumber={info.remix_level.level} /></p>}
+            </Col>
+        
+         </Row> : <Row>
+        <h1>No Artist Found</h1> </Row>
+            )
            
         }
         <hr></hr>
