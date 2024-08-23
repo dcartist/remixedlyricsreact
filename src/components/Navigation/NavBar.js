@@ -1,9 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
  export default function NavBar() {
+    const location = useLocation();
      const menu = [
         {name: "Home", link: "/"},
         {name: "About", link: "/about"},
@@ -16,10 +17,15 @@ import { Link } from 'react-router-dom';
     return (
         <Navbar expand="lg" className="bg-body-tertiary mb-5">
           <Container>
-            <Navbar.Brand href="#home">Remixed Lyrics</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {location.pathname !== '/' ? <Navbar.Brand as={Link} to="/">
+          Remixed Lyrics
+        </Navbar.Brand> : 
+        <Navbar.Brand>
+          {" "} 
+        </Navbar.Brand>}
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
+              <Nav className="ms-auto">
                 {
                     menu.map((item, index) => {
                         return (
@@ -31,6 +37,8 @@ import { Link } from 'react-router-dom';
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
+
       );
 
 }
