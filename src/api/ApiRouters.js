@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+// list all categories
 const AllCategoryApi = () => {
     const [categories, setCategories] = useState([]);
 
@@ -16,13 +16,15 @@ const AllCategoryApi = () => {
     return categories;
 }
 
-
+//List all songs
 const AllSongsApi = () => {
     const [songs, setSongs] = useState([]);
+    console.log(songs)
     useEffect(() => {
         const fetchSongs = async () => {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/songs`);
-            setSongs(response.data);
+            const songsresponse = await axios.get(`${process.env.REACT_APP_API_URL}/songs/`);
+            setSongs(songsresponse.data);
+            console.log(songsresponse.data);
         }
         fetchSongs();
     }, []);
@@ -30,12 +32,12 @@ const AllSongsApi = () => {
     return songs;
 }
 
-
+// Grab song by id
 const GetSongById = (songId) => {  
     const [song, setSong] = useState([]);
     useEffect(() => {
         const fetchSong = async () => {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/songs/${songId}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/songs/${songId}/`);
             setSong(response.data);
         }
         fetchSong();
@@ -45,4 +47,4 @@ const GetSongById = (songId) => {
 }
 
 
-export  {AllCategoryApi, AllSongsApi, GetSongById};
+export {AllSongsApi, AllCategoryApi, GetSongById};

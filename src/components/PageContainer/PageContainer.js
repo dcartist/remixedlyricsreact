@@ -22,7 +22,7 @@ const PageContainer = ({ children, rowClassName = "", containerClassName = "", t
       </Container>
     );
   };
-const SongContainer = ({ children, rowClassName = "", containerClassName = "", title=""}) => {
+const SongContainer = ({ rowClassName = "", containerClassName = "", title="", info}) => {
     useEffect(() => {
         document.title = title;
       }, [])
@@ -30,11 +30,12 @@ const SongContainer = ({ children, rowClassName = "", containerClassName = "", t
     return (
       <Container className={containerClassName}>
         <Row>
-            <h1>{title}</h1>
+            <h1>{info.title}</h1>
+            <p>{info.artist.name}</p>
             <hr></hr>
         </Row>
         <Row className={rowClassName}>
-
+        <pre>{info.lyrics}  </pre>
 
         </Row>
       </Container>
