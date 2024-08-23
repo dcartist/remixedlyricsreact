@@ -1,8 +1,11 @@
 import React, {useEffect} from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Rating from '../Rating/Rating';
 
 
+// Main Page Container
 const PageContainer = ({ children, rowClassName = "", containerClassName = "", title="", noHeaders = false}) => {
     useEffect(() => {
         document.title = title;
@@ -22,22 +25,38 @@ const PageContainer = ({ children, rowClassName = "", containerClassName = "", t
       </Container>
     );
   };
+
+
+
+// Container for songs
 const SongContainer = ({ rowClassName = "", containerClassName = "", title="", info}) => {
     useEffect(() => {
-        document.title = title;
+       info ?  document.title = `${info.title} - ${info.artist.name}` : document.title = ` No Artist Found` ;
       }, [])
 
     return (
       <Container className={containerClassName}>
-        <Row>
-            <h1>{info.title}</h1>
+        {
+            info ?  <Row>
+                <Col>
+                <h1>{info.title}</h1>
             <p>{info.artist.name}</p>
-            <hr></hr>
-        </Row>
-        <Row className={rowClassName}>
+                </Col>
+                <Col className="d-flex align-items-center">
+                
+            <p className="ms-auto">Remixed Level: <Rating ratingNumber={info.remix_level.level} /></p>
+                </Col>
+            
+             </Row> : <Row>
+            <h1>No Artist Found</h1> </Row>
+           
+        }
+        <hr></hr>
+       {
+        info &&  <Row className={rowClassName}>
         <pre>{info.lyrics}  </pre>
-
         </Row>
+       }
       </Container>
     );
   };

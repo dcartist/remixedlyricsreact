@@ -13,7 +13,7 @@ export default function Home() {
 <Col></Col>
 <Col>
 <ul>
-{categories.map((category) => <li>{category.name}</li>)}
+{categories.map((category, index) => <li key={1}>{category.name}</li>)}
 </ul>
 </Col>
 
