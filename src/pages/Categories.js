@@ -8,8 +8,8 @@ export default function Categories() {
     console.log("test")
   return (
     <PageContainer title="Categories" rowClassName="text-left">
-        <p>Coming soon listing by categories</p>
-    <ul>
+        <p>Coming soon... active listing by categories</p>
+    <ul className="ml-0 pl-0">
         {/* {CategoryList.map((category, index) => <li key={index}><Link to={`/categories/${cat
         egory.id}`}>{category.name}</Link></li>)} */}
         {CategoryList.map((category, index) => <li key={index}>{category.name}</li>)}

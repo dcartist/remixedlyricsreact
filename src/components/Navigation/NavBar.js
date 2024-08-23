@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
      const menu = [
         {name: "Home", link: "/"},
         {name: "About", link: "/about"},
-        {name: "Artists", link: "/artists"},
+        // {name: "Artists", link: "/artists"},
         {name: "Categories", link: "/categories"},  //Coming Soon.. will have active links to categories
         {name: "Songs", link: "/songs"}, 
      ]
