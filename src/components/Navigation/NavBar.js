@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
         {name: "Home", link: "/"},
         {name: "About", link: "/about"},
         {name: "Artists", link: "/artists"},
+        {name: "Categories", link: "/categories"},  //Coming Soon.. will have active links to categories
         {name: "Songs", link: "/songs"}, 
-        // {name: "Categories", link: "/categories"},  Coming Soon
      ]
 
 
